@@ -2,18 +2,21 @@ package org.example.bankApp;
 
 public class Main {
     public static void main(String[] args) {
-        BankAccount account1 = new BankAccount("1234567890", "John Doe", 1000.0);
-        BankAccount account2 = new BankAccount("0987654321", "Jane Doe", 2000.0);
+        BankAccount bankAccount = new BankAccount("1234567890", "John Doe", 0.0);
+        bankAccount.deposit(1000);
+        bankAccount.withdraw(500);
+        bankAccount.withdraw(600);
+        bankAccount.withdraw(100);
+        bankAccount.deposit(200);
+        bankAccount.withdraw(200);
+        bankAccount.withdraw(200);
+        bankAccount.withdraw(200);
+        bankAccount.withdraw(200);
 
-        account1.deposit(500.0);
-        account1.withdraw(200.0);
-        account1.transfer(100.0, account2);
+        bankAccount.printAccountDetails();
 
-        System.out.println(account1.getAccountName() + " has a balance of " + account1.getBalance());
+        bankAccount.printTransactions();
 
+        }
 
-
-
-        System.out.println(account2.getAccountName() + " has a balance of " + account2.getBalance());
-    }
 }
